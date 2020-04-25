@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Michael Velez</title>
+    <style>
+        #background {
+            position: fixed;
+            z-index: -1;
+        }
+
+
+        .item1 {
+            grid-area: header;
+        }
+
+        .item2 {
+            grid-area: menu;
+        }
+
+        .item3 {
+            grid-area: main;
+        }
+
+        .item4 {
+            grid-area: right;
+        }
+
+        .item5 {
+            grid-area: footer;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                'header header header header header header'
+                'main main main main main main'
+                'footer footer footer footer footer footer';
+            grid-gap: 10px;
+            /* background-color: #2196F3; */
+            padding: 10px;
+        }
+
+        .grid-container>div {
+            background-color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+        }
+
+
+        .flex-container {
+            display: flex;
+            flex-wrap: nowrap;
+            background-color: DodgerBlue;
+        }
+
+        .flex-container>div {
+            background-color: #f1f1f1;
+            width: 30%;
+            margin: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.6.1/css-doodle.min.js"></script>
+
+    <css-doodle id="background">
+        :doodle {
+        @grid: 18 / 100vmax;
+        background: #0a0c27;
+        }
+        --hue: calc(180 + 1.5 * @row() * @col());
+        background: hsl(var(--hue), 50%, 70%);
+        margin: -.5px;
+        transition: @r(.5s) ease;
+        clip-path: polygon(@pick(
+        '0 0, 100% 0, 100% 100%',
+        '0 0, 100% 0, 0 100%',
+        '0 0, 100% 100%, 0 100%',
+        '100% 0, 100% 100%, 0 100%'
+        ));
+    </css-doodle>
+    <div class="grid-container">
+        <div class="item1">
+            <pre>
+        _      _                _             _          
+  /\/\ (_) ___| |__   __ _  ___| | /\   /\___| | ___ ____
+ /    \| |/ __| '_ \ / _` |/ _ \ | \ \ / / _ \ |/ _ \_  /
+/ /\/\ \ | (__| | | | (_| |  __/ |  \ V /  __/ |  __// / 
+\/    \/_|\___|_| |_|\__,_|\___|_|   \_/ \___|_|\___/___|
+=========================================================
+</pre>
+        </div>
+        <div class="item3">
+            <p></p>
+        </div>
+        <div class="item5 flex-container">
+            <div><a href="https://www.linkedin.com/in/michael-velez-57647858/">Linked In</a></div>
+            <div>&copy; Michael Velez</div>
+            <div></div>
+        </div>
+    </div>
+    <div id="header">
+
+    </div>
+</body>
+
+</html>
